@@ -1,2 +1,2 @@
 # monster_jump
-digital system final lab
+verilog_final_project

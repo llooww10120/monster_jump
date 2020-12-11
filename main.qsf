@@ -1,0 +1,110 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 132 02/25/2009 SJ Web Edition
+# Date created = 09:17:03  December 11, 2020
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		main_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name DEVICE EP1C6Q240C8
+set_global_assignment -name TOP_LEVEL_ENTITY main
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:17:03  DECEMBER 11, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION 9.0
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name CYCLONE_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH BUS-HOLD"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_28 -to clk
+set_location_assignment PIN_226 -to down
+set_location_assignment PIN_6 -to led_c[0]
+set_location_assignment PIN_5 -to led_c[1]
+set_location_assignment PIN_4 -to led_c[2]
+set_location_assignment PIN_61 -to led_c[3]
+set_location_assignment PIN_62 -to led_c[4]
+set_location_assignment PIN_63 -to led_c[5]
+set_location_assignment PIN_64 -to led_c[6]
+set_location_assignment PIN_65 -to led_c[7]
+set_location_assignment PIN_66 -to led_r[0]
+set_location_assignment PIN_67 -to led_r[1]
+set_location_assignment PIN_68 -to led_r[2]
+set_location_assignment PIN_73 -to led_r[3]
+set_location_assignment PIN_2 -to led_r[4]
+set_location_assignment PIN_238 -to led_r[5]
+set_location_assignment PIN_237 -to led_r[6]
+set_location_assignment PIN_236 -to led_r[7]
+set_location_assignment PIN_79 -to rst
+set_location_assignment PIN_77 -to start
+set_location_assignment PIN_78 -to up
+set_global_assignment -name MISC_FILE "C:/Users/User/Desktop/monster_jump/main.dpf"
+set_global_assignment -name GENERATE_RBF_FILE ON
+set_location_assignment PIN_76 -to col
+set_location_assignment PIN_60 -to led1_r[0]
+set_location_assignment PIN_59 -to led1_r[1]
+set_location_assignment PIN_58 -to led1_r[2]
+set_location_assignment PIN_57 -to led1_r[3]
+set_location_assignment PIN_56 -to led1_r[4]
+set_location_assignment PIN_55 -to led1_r[5]
+set_location_assignment PIN_54 -to led1_r[6]
+set_location_assignment PIN_53 -to led1_r[7]
+set_location_assignment PIN_50 -to led2_r[0]
+set_location_assignment PIN_49 -to led2_r[1]
+set_location_assignment PIN_48 -to led2_r[2]
+set_location_assignment PIN_47 -to led2_r[3]
+set_location_assignment PIN_46 -to led2_r[4]
+set_location_assignment PIN_45 -to led2_r[5]
+set_location_assignment PIN_44 -to led2_r[6]
+set_location_assignment PIN_43 -to led2_r[7]
+set_location_assignment PIN_42 -to led3_r[0]
+set_location_assignment PIN_41 -to led3_r[1]
+set_location_assignment PIN_23 -to led3_r[2]
+set_location_assignment PIN_21 -to led3_r[3]
+set_location_assignment PIN_20 -to led3_r[4]
+set_location_assignment PIN_19 -to led3_r[5]
+set_location_assignment PIN_18 -to led3_r[6]
+set_location_assignment PIN_17 -to led3_r[7]
+set_location_assignment PIN_16 -to led4_r[0]
+set_location_assignment PIN_15 -to led4_r[1]
+set_location_assignment PIN_14 -to led4_r[2]
+set_location_assignment PIN_13 -to led4_r[3]
+set_location_assignment PIN_12 -to led4_r[4]
+set_location_assignment PIN_11 -to led4_r[5]
+set_location_assignment PIN_8 -to led4_r[6]
+set_location_assignment PIN_7 -to led4_r[7]

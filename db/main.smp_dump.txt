@@ -1,0 +1,11 @@
+
+State Machine - |main|display:dp1|LFSR:LFSR1|state
+Name state.s111 state.s11 state.s1001 state.s100 state.s101 state.s10 state.s1 state.s0 
+state.s0 0 0 0 0 0 0 0 0 
+state.s1 0 0 0 0 0 0 1 1 
+state.s10 0 0 0 0 0 1 0 1 
+state.s101 0 0 0 0 1 0 0 1 
+state.s100 0 0 0 1 0 0 0 1 
+state.s1001 0 0 1 0 0 0 0 1 
+state.s11 0 1 0 0 0 0 0 1 
+state.s111 1 0 0 0 0 0 0 1 

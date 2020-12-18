@@ -144,7 +144,7 @@ led_r[3]                     : 73        : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_BUS_HOLD : 74        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_BUS_HOLD : 75        :        :                   :         : 4         :                
 col                          : 76        : output : 3.3-V LVTTL       :         : 4         : Y              
-start                        : 77        : input  : 3.3-V LVTTL       :         : 4         : Y              
+RESERVED_INPUT_WITH_BUS_HOLD : 77        :        :                   :         : 4         :                
 up                           : 78        : input  : 3.3-V LVTTL       :         : 4         : Y              
 rst                          : 79        : input  : 3.3-V LVTTL       :         : 4         : Y              
 RESERVED_INPUT_WITH_BUS_HOLD : 80        :        :                   :         : 4         :                
@@ -293,7 +293,7 @@ RESERVED_INPUT_WITH_BUS_HOLD : 222       :        :                   :         
 RESERVED_INPUT_WITH_BUS_HOLD : 223       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_BUS_HOLD : 224       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_BUS_HOLD : 225       :        :                   :         : 2         :                
-down                         : 226       : input  : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT_WITH_BUS_HOLD : 226       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_BUS_HOLD : 227       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_BUS_HOLD : 228       :        :                   :         : 2         :                
 VCCINT                       : 229       : power  :                   : 1.5V    :           :                

@@ -1,5 +1,5 @@
 Flow report for main
-Fri Dec 11 12:05:46 2020
+Fri Dec 18 11:54:39 2020
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; Flow Summary                                                      ;
 +-------------------------+-----------------------------------------+
-; Flow Status             ; Successful - Fri Dec 11 12:05:46 2020   ;
+; Flow Status             ; Successful - Fri Dec 18 11:54:39 2020   ;
 ; Quartus II Version      ; 9.0 Build 132 02/25/2009 SJ Web Edition ;
 ; Revision Name           ; main                                    ;
 ; Top-level Entity Name   ; main                                    ;
@@ -46,8 +46,8 @@ applicable agreement for further details.
 ; Device                  ; EP1C6Q240C8                             ;
 ; Timing Models           ; Final                                   ;
 ; Met timing requirements ; No                                      ;
-; Total logic elements    ; 144 / 5,980 ( 2 % )                     ;
-; Total pins              ; 54 / 185 ( 29 % )                       ;
+; Total logic elements    ; 210 / 5,980 ( 4 % )                     ;
+; Total pins              ; 52 / 185 ( 28 % )                       ;
 ; Total virtual pins      ; 0                                       ;
 ; Total memory bits       ; 0 / 92,160 ( 0 % )                      ;
 ; Total PLLs              ; 0 / 2 ( 0 % )                           ;
@@ -59,23 +59,24 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/11/2020 12:05:41 ;
+; Start date & time ; 12/18/2020 11:54:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; main                ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+------------------------------------+---------------------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                                       ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+---------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 141055658348269.160765954103028             ; --            ; --          ; --             ;
-; MISC_FILE                          ; C:/Users/User/Desktop/monster_jump/main.dpf ; --            ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                                    ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                                      ; --            ; --          ; Top            ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                         ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+---------------------------------------------+---------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                     ;
++------------------------------------+--------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                                            ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+--------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 141055658348269.160826367302780                  ; --            ; --          ; --             ;
+; MISC_FILE                          ; C:/Users/User/Desktop/monster_jump/main.dpf      ; --            ; --          ; --             ;
+; MISC_FILE                          ; C:/Users/User/Desktop/monster_jump-main/main.dpf ; --            ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                                         ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                                           ; --            ; --          ; Top            ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                              ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+--------------------------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -86,7 +87,7 @@ applicable agreement for further details.
 ; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 235 MB              ; 00:00:01                           ;
 ; Fitter                  ; 00:00:01     ; 1.0                     ; 258 MB              ; 00:00:01                           ;
 ; Assembler               ; 00:00:01     ; 1.0                     ; 218 MB              ; 00:00:01                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 180 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 181 MB              ; 00:00:00                           ;
 ; Total                   ; 00:00:03     ; --                      ; --                  ; 00:00:03                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 

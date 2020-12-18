@@ -1,8 +1,8 @@
 module divider(clk,d_clock,rst,div_f);
 input clk,rst;
 output reg d_clock;//clock after divider
-reg[15:0]divide_counter;//count for divider
-input [15:0]div_f;//what frequency you want to divide
+reg[10:0]divide_counter;//count for divider
+input [7:0]div_f;//what frequency you want to divide
 //divider
 always@(posedge clk,negedge rst)
 	if(!rst)divide_counter<=0;

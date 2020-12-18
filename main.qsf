@@ -53,7 +53,6 @@ set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH BUS-HOLD"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_28 -to clk
-set_location_assignment PIN_226 -to down
 set_location_assignment PIN_6 -to led_c[0]
 set_location_assignment PIN_5 -to led_c[1]
 set_location_assignment PIN_4 -to led_c[2]
@@ -71,7 +70,6 @@ set_location_assignment PIN_238 -to led_r[5]
 set_location_assignment PIN_237 -to led_r[6]
 set_location_assignment PIN_236 -to led_r[7]
 set_location_assignment PIN_79 -to rst
-set_location_assignment PIN_77 -to start
 set_location_assignment PIN_78 -to up
 set_global_assignment -name MISC_FILE "C:/Users/User/Desktop/monster_jump/main.dpf"
 set_global_assignment -name GENERATE_RBF_FILE ON
@@ -108,3 +106,4 @@ set_location_assignment PIN_12 -to led4_r[4]
 set_location_assignment PIN_11 -to led4_r[5]
 set_location_assignment PIN_8 -to led4_r[6]
 set_location_assignment PIN_7 -to led4_r[7]
+set_global_assignment -name MISC_FILE "C:/Users/User/Desktop/monster_jump-main/main.dpf"

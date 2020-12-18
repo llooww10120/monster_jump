@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Fri Dec 11 12:05:42 2020
+Fri Dec 18 11:54:34 2020
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
 
 
@@ -12,14 +12,14 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. State Machine - |main|display:dp1|LFSR:LFSR1|state
+  7. User-Specified and Inferred Latches
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Inverted Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: display:dp1|LFSR:LFSR1
- 13. Port Connectivity Checks: "display:dp1"
- 14. Port Connectivity Checks: "divider:divider_controll"
+ 12. Parameter Settings for User Entity Instance: display:dp1
+ 13. Port Connectivity Checks: "divider:divider_vv"
+ 14. Port Connectivity Checks: "divider:divider_bain"
  15. Port Connectivity Checks: "divider:divider_barrier"
  16. Analysis & Synthesis Messages
 
@@ -47,13 +47,13 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                          ;
 +-----------------------------+-----------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Dec 11 12:05:42 2020   ;
+; Analysis & Synthesis Status ; Successful - Fri Dec 18 11:54:34 2020   ;
 ; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Web Edition ;
 ; Revision Name               ; main                                    ;
 ; Top-level Entity Name       ; main                                    ;
 ; Family                      ; Cyclone                                 ;
-; Total logic elements        ; 148                                     ;
-; Total pins                  ; 54                                      ;
+; Total logic elements        ; 221                                     ;
+; Total pins                  ; 52                                      ;
 ; Total virtual pins          ; 0                                       ;
 ; Total memory bits           ; 0                                       ;
 ; Total PLLs                  ; 0                                       ;
@@ -132,16 +132,16 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                            ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                  ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------+
-; main.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump/main.v     ;
-; divider.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump/divider.v  ;
-; controll.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump/controll.v ;
-; display.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump/display.v  ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                       ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------+
+; main.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump-main/main.v     ;
+; divider.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump-main/divider.v  ;
+; controll.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump-main/controll.v ;
+; display.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/Desktop/monster_jump-main/display.v  ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -149,33 +149,33 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 148   ;
-;     -- Combinational with no register       ; 28    ;
-;     -- Register only                        ; 8     ;
-;     -- Combinational with a register        ; 112   ;
+; Total logic elements                        ; 221   ;
+;     -- Combinational with no register       ; 76    ;
+;     -- Register only                        ; 20    ;
+;     -- Combinational with a register        ; 125   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 35    ;
-;     -- 3 input functions                    ; 45    ;
-;     -- 2 input functions                    ; 56    ;
-;     -- 1 input functions                    ; 3     ;
-;     -- 0 input functions                    ; 1     ;
+;     -- 4 input functions                    ; 53    ;
+;     -- 3 input functions                    ; 66    ;
+;     -- 2 input functions                    ; 78    ;
+;     -- 1 input functions                    ; 4     ;
+;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 138   ;
-;     -- arithmetic mode                      ; 10    ;
+;     -- normal mode                          ; 180   ;
+;     -- arithmetic mode                      ; 41    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 61    ;
+;     -- synchronous clear/load mode          ; 12    ;
+;     -- asynchronous clear/load mode         ; 77    ;
 ;                                             ;       ;
-; Total registers                             ; 120   ;
-; Total logic cells in carry chains           ; 11    ;
-; I/O pins                                    ; 54    ;
+; Total registers                             ; 145   ;
+; Total logic cells in carry chains           ; 44    ;
+; I/O pins                                    ; 52    ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 80    ;
-; Total fan-out                               ; 636   ;
-; Average fan-out                             ; 3.15  ;
+; Maximum fan-out                             ; 99    ;
+; Total fan-out                               ; 873   ;
+; Average fan-out                             ; 3.20  ;
 +---------------------------------------------+-------+
 
 
@@ -184,58 +184,53 @@ applicable agreement for further details.
 +------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name           ; Library Name ;
 +------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------+--------------+
-; |main                        ; 148 (0)     ; 120          ; 0           ; 54   ; 0            ; 28 (0)       ; 8 (0)             ; 112 (0)          ; 11 (0)          ; 0 (0)      ; |main                         ; work         ;
-;    |controll:comb_20|        ; 1 (1)       ; 1            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|controll:comb_20        ; work         ;
-;    |display:dp1|             ; 119 (68)    ; 107          ; 0           ; 0    ; 0            ; 12 (9)       ; 3 (1)             ; 104 (58)         ; 0 (0)           ; 0 (0)      ; |main|display:dp1             ; work         ;
-;       |LFSR:LFSR1|           ; 17 (17)     ; 16           ; 0           ; 0    ; 0            ; 1 (1)        ; 2 (2)             ; 14 (14)          ; 0 (0)           ; 0 (0)      ; |main|display:dp1|LFSR:LFSR1  ; work         ;
+; |main                        ; 221 (0)     ; 145          ; 0           ; 52   ; 0            ; 76 (0)       ; 20 (0)            ; 125 (0)          ; 44 (0)          ; 0 (0)      ; |main                         ; work         ;
+;    |controll:comb_52|        ; 22 (22)     ; 14           ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 14 (14)          ; 12 (12)         ; 0 (0)      ; |main|controll:comb_52        ; work         ;
+;    |display:dp1|             ; 118 (84)    ; 97           ; 0           ; 0    ; 0            ; 21 (19)      ; 1 (1)             ; 96 (64)          ; 0 (0)           ; 0 (0)      ; |main|display:dp1             ; work         ;
 ;       |dp:d1|                ; 10 (10)     ; 8            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |main|display:dp1|dp:d1       ; work         ;
 ;       |dp:d2|                ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |main|display:dp1|dp:d2       ; work         ;
 ;       |dp:d3|                ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |main|display:dp1|dp:d3       ; work         ;
 ;       |dp:d4|                ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |main|display:dp1|dp:d4       ; work         ;
-;    |divider:divider_barrier| ; 28 (28)     ; 12           ; 0           ; 0    ; 0            ; 16 (16)      ; 5 (5)             ; 7 (7)            ; 11 (11)         ; 0 (0)      ; |main|divider:divider_barrier ; work         ;
+;    |divider:divider_barrier| ; 39 (39)     ; 17           ; 0           ; 0    ; 0            ; 22 (22)      ; 9 (9)             ; 8 (8)            ; 16 (16)         ; 0 (0)      ; |main|divider:divider_barrier ; work         ;
+;    |divider:divider_vv|      ; 42 (42)     ; 17           ; 0           ; 0    ; 0            ; 25 (25)      ; 10 (10)           ; 7 (7)            ; 16 (16)         ; 0 (0)      ; |main|divider:divider_vv      ; work         ;
 +------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------+
-; State Machine - |main|display:dp1|LFSR:LFSR1|state                                                             ;
-+-------------+------------+-----------+-------------+------------+------------+-----------+----------+----------+
-; Name        ; state.s111 ; state.s11 ; state.s1001 ; state.s100 ; state.s101 ; state.s10 ; state.s1 ; state.s0 ;
-+-------------+------------+-----------+-------------+------------+------------+-----------+----------+----------+
-; state.s0    ; 0          ; 0         ; 0           ; 0          ; 0          ; 0         ; 0        ; 0        ;
-; state.s1    ; 0          ; 0         ; 0           ; 0          ; 0          ; 0         ; 1        ; 1        ;
-; state.s10   ; 0          ; 0         ; 0           ; 0          ; 0          ; 1         ; 0        ; 1        ;
-; state.s101  ; 0          ; 0         ; 0           ; 0          ; 1          ; 0         ; 0        ; 1        ;
-; state.s100  ; 0          ; 0         ; 0           ; 1          ; 0          ; 0         ; 0        ; 1        ;
-; state.s1001 ; 0          ; 0         ; 1           ; 0          ; 0          ; 0         ; 0        ; 1        ;
-; state.s11   ; 0          ; 1         ; 0           ; 0          ; 0          ; 0         ; 0        ; 1        ;
-; state.s111  ; 1          ; 0         ; 0           ; 0          ; 0          ; 0         ; 0        ; 1        ;
-+-------------+------------+-----------+-------------+------------+------------+-----------+----------+----------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; display:dp1|temp[2]                                ; display:dp1|Mux10   ; yes                    ;
+; display:dp1|temp[1]                                ; display:dp1|Mux10   ; yes                    ;
+; display:dp1|temp[0]                                ; display:dp1|Mux10   ; yes                    ;
+; display:dp1|temp[3]                                ; display:dp1|Mux10   ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                      ;
-+----------------------------------------+--------------------------------+
-; Register name                          ; Reason for Removal             ;
-+----------------------------------------+--------------------------------+
-; display:dp1|dp:d1|R_s[0]               ; Merged with display:dp1|R_s[0] ;
-; display:dp1|dp:d2|R_s[0]               ; Merged with display:dp1|R_s[0] ;
-; display:dp1|dp:d3|R_s[0]               ; Merged with display:dp1|R_s[0] ;
-; display:dp1|dp:d4|R_s[0]               ; Merged with display:dp1|R_s[0] ;
-; display:dp1|dp:d1|R_s[1]               ; Merged with display:dp1|R_s[1] ;
-; display:dp1|dp:d2|R_s[1]               ; Merged with display:dp1|R_s[1] ;
-; display:dp1|dp:d3|R_s[1]               ; Merged with display:dp1|R_s[1] ;
-; display:dp1|dp:d4|R_s[1]               ; Merged with display:dp1|R_s[1] ;
-; display:dp1|dp:d1|R_s[2]               ; Merged with display:dp1|R_s[2] ;
-; display:dp1|dp:d2|R_s[2]               ; Merged with display:dp1|R_s[2] ;
-; display:dp1|dp:d3|R_s[2]               ; Merged with display:dp1|R_s[2] ;
-; display:dp1|dp:d4|R_s[2]               ; Merged with display:dp1|R_s[2] ;
-; display:dp1|LFSR:LFSR1|state~5         ; Lost fanout                    ;
-; display:dp1|LFSR:LFSR1|state~6         ; Lost fanout                    ;
-; display:dp1|LFSR:LFSR1|state~7         ; Lost fanout                    ;
-; Total Number of Removed Registers = 15 ;                                ;
-+----------------------------------------+--------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; display:dp1|dp:d1|R_s[0]               ; Merged with display:dp1|R_s[0]         ;
+; display:dp1|dp:d2|R_s[0]               ; Merged with display:dp1|R_s[0]         ;
+; display:dp1|dp:d3|R_s[0]               ; Merged with display:dp1|R_s[0]         ;
+; display:dp1|dp:d4|R_s[0]               ; Merged with display:dp1|R_s[0]         ;
+; display:dp1|dp:d1|R_s[1]               ; Merged with display:dp1|R_s[1]         ;
+; display:dp1|dp:d2|R_s[1]               ; Merged with display:dp1|R_s[1]         ;
+; display:dp1|dp:d3|R_s[1]               ; Merged with display:dp1|R_s[1]         ;
+; display:dp1|dp:d4|R_s[1]               ; Merged with display:dp1|R_s[1]         ;
+; display:dp1|dp:d1|R_s[2]               ; Merged with display:dp1|R_s[2]         ;
+; display:dp1|dp:d2|R_s[2]               ; Merged with display:dp1|R_s[2]         ;
+; display:dp1|dp:d3|R_s[2]               ; Merged with display:dp1|R_s[2]         ;
+; display:dp1|dp:d4|R_s[2]               ; Merged with display:dp1|R_s[2]         ;
+; controll:comb_52|up_counter[12..15]    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 16 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -243,32 +238,34 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 120   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 145   ;
+; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 56    ;
-; Number of registers using Asynchronous Load  ; 5     ;
-; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Asynchronous Clear ; 77    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; display:dp1|C[7]                       ; 3       ;
-; controll:comb_20|con_up                ; 48      ;
-; display:dp1|barrier_out[11]            ; 2       ;
-; display:dp1|barrier_out[14]            ; 2       ;
-; display:dp1|barrier_out[4]             ; 2       ;
-; display:dp1|barrier_out[7]             ; 2       ;
-; display:dp1|LFSR:LFSR1|Y[8]            ; 14      ;
-; display:dp1|LFSR:LFSR1|Y[5]            ; 1       ;
-; display:dp1|LFSR:LFSR1|Y[1]            ; 1       ;
-; Total number of inverted registers = 9 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; display:dp1|C[7]                        ; 3       ;
+; display:dp1|barrier_out[28]             ; 2       ;
+; display:dp1|barrier_out[22]             ; 2       ;
+; display:dp1|barrier_out[23]             ; 2       ;
+; display:dp1|barrier_out[13]             ; 2       ;
+; display:dp1|barrier_out[14]             ; 2       ;
+; display:dp1|barrier_out[15]             ; 2       ;
+; display:dp1|barrier_out[4]              ; 2       ;
+; display:dp1|barrier_out[5]              ; 2       ;
+; display:dp1|barrier_out[6]              ; 2       ;
+; display:dp1|barrier_out[7]              ; 2       ;
+; Total number of inverted registers = 11 ;         ;
++-----------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -276,63 +273,64 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|display:dp1|C[0]         ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|display:dp1|R_o[0]       ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|display:dp1|dp:d1|R_o[4] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|display:dp1|C[4]         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|display:dp1|R_o[1]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|display:dp1|dp:d2|R_o[3] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: display:dp1|LFSR:LFSR1 ;
-+-----------------+----------+----------------------------------------+
-; Parameter Name  ; Value    ; Type                                   ;
-+-----------------+----------+----------------------------------------+
-; Tap_Coefficient ; 01110001 ; Unsigned Binary                        ;
-; initial_state   ; 0010001  ; Unsigned Binary                        ;
-; s0              ; 000      ; Unsigned Binary                        ;
-; s1              ; 001      ; Unsigned Binary                        ;
-; s10             ; 010      ; Unsigned Binary                        ;
-; s101            ; 011      ; Unsigned Binary                        ;
-; s100            ; 100      ; Unsigned Binary                        ;
-; s1001           ; 101      ; Unsigned Binary                        ;
-; s11             ; 110      ; Unsigned Binary                        ;
-; s111            ; 111      ; Unsigned Binary                        ;
-+-----------------+----------+----------------------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:dp1                    ;
++----------------+------------------------------------------+-----------------+
+; Parameter Name ; Value                                    ; Type            ;
++----------------+------------------------------------------+-----------------+
+; b              ; 0000000000010000110000001110000011110000 ; Unsigned Binary ;
++----------------+------------------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "display:dp1"                                                                               ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; barrier_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------+
+; Port Connectivity Checks: "divider:divider_vv"  ;
++---------------+-------+----------+--------------+
+; Port          ; Type  ; Severity ; Details      ;
++---------------+-------+----------+--------------+
+; div_f[7..6]   ; Input ; Info     ; Stuck at VCC ;
+; div_f[15..11] ; Input ; Info     ; Stuck at GND ;
+; div_f[9..8]   ; Input ; Info     ; Stuck at GND ;
+; div_f[3..2]   ; Input ; Info     ; Stuck at GND ;
+; div_f[10]     ; Input ; Info     ; Stuck at VCC ;
+; div_f[5]      ; Input ; Info     ; Stuck at GND ;
+; div_f[4]      ; Input ; Info     ; Stuck at VCC ;
+; div_f[1]      ; Input ; Info     ; Stuck at VCC ;
+; div_f[0]      ; Input ; Info     ; Stuck at GND ;
++---------------+-------+----------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "divider:divider_controll"                                                                  ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; d_clock     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; div_f[7..5] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; div_f[2..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; div_f[4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; div_f[3]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divider:divider_bain"                                                                        ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; d_clock       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; div_f[10..6]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; div_f[15..11] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; div_f[3..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; div_f[5]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; div_f[4]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
 ; Port Connectivity Checks: "divider:divider_barrier" ;
-+-------------+-------+----------+--------------------+
-; Port        ; Type  ; Severity ; Details            ;
-+-------------+-------+----------+--------------------+
-; div_f[7..4] ; Input ; Info     ; Stuck at VCC       ;
-; div_f[1..0] ; Input ; Info     ; Stuck at GND       ;
-; div_f[3]    ; Input ; Info     ; Stuck at GND       ;
-; div_f[2]    ; Input ; Info     ; Stuck at VCC       ;
-+-------------+-------+----------+--------------------+
++--------------+-------+----------+-------------------+
+; Port         ; Type  ; Severity ; Details           ;
++--------------+-------+----------+-------------------+
+; div_f[7..3]  ; Input ; Info     ; Stuck at VCC      ;
+; div_f[15..8] ; Input ; Info     ; Stuck at GND      ;
+; div_f[2]     ; Input ; Info     ; Stuck at GND      ;
+; div_f[1]     ; Input ; Info     ; Stuck at VCC      ;
+; div_f[0]     ; Input ; Info     ; Stuck at GND      ;
++--------------+-------+----------+-------------------+
 
 
 +-------------------------------+
@@ -341,61 +339,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
-    Info: Processing started: Fri Dec 11 12:05:41 2020
+    Info: Processing started: Fri Dec 18 11:54:33 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
-Warning (10229): Verilog HDL Expression warning at main.v(7): truncated literal to match 8 bits
-Warning (10229): Verilog HDL Expression warning at main.v(8): truncated literal to match 8 bits
 Warning: Using design file main.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info: Found entity 1: main
-Warning (10236): Verilog HDL Implicit Net warning at main.v(11): created implicit net for "con_up"
-Warning (10236): Verilog HDL Implicit Net warning at main.v(11): created implicit net for "con_down"
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(11): instance has no name
+Warning (10236): Verilog HDL Implicit Net warning at main.v(8): created implicit net for "bain_clock"
+Warning (10236): Verilog HDL Implicit Net warning at main.v(9): created implicit net for "vv_clk"
+Warning (10236): Verilog HDL Implicit Net warning at main.v(11): created implicit net for "bain_clk"
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(10): instance has no name
 Info: Elaborating entity "main" for the top level hierarchy
 Warning: Using design file divider.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info: Found entity 1: divider
 Info: Elaborating entity "divider" for hierarchy "divider:divider_barrier"
-Warning (10230): Verilog HDL assignment warning at divider.v(10): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at divider.v(10): truncated value with size 32 to match size of target (16)
 Warning: Using design file controll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info: Found entity 1: controll
-Info: Elaborating entity "controll" for hierarchy "controll:comb_20"
-Warning (10230): Verilog HDL assignment warning at controll.v(9): truncated value with size 32 to match size of target (5)
-Warning (10034): Output port "con_down" at controll.v(3) has no driver
-Warning (10229): Verilog HDL Expression warning at display.v(109): truncated literal to match 8 bits
-Warning: Using design file display.v, which is not specified as a design file for the current project, but contains definitions for 3 design units and 3 entities in project
+Info: Elaborating entity "controll" for hierarchy "controll:comb_52"
+Warning: Using design file display.v, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
     Info: Found entity 1: display
-    Info: Found entity 2: LFSR
-    Info: Found entity 3: dp
+    Info: Found entity 2: dp
 Info: Elaborating entity "display" for hierarchy "display:dp1"
 Warning (10036): Verilog HDL or VHDL warning at display.v(10): object "i" assigned a value but never read
-Warning (10235): Verilog HDL Always Construct warning at display.v(76): variable "barrier_out" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at display.v(70): variable "barrier_out" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at display.v(101): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at display.v(100): inferring latch(es) for variable "temp", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "temp[0]" at display.v(100)
+Info (10041): Inferred latch for "temp[1]" at display.v(100)
+Info (10041): Inferred latch for "temp[2]" at display.v(100)
+Info (10041): Inferred latch for "temp[3]" at display.v(100)
 Info: Elaborating entity "dp" for hierarchy "display:dp1|dp:d1"
-Info: Elaborating entity "LFSR" for hierarchy "display:dp1|LFSR:LFSR1"
-Warning (10230): Verilog HDL assignment warning at display.v(110): truncated value with size 8 to match size of target (7)
-Warning (10235): Verilog HDL Always Construct warning at display.v(134): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(135): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(139): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(140): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(144): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(145): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(153): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(154): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(162): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at display.v(163): variable "Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning: Latch display:dp1|temp[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal display:dp1|tt[2]
+Warning: Latch display:dp1|temp[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal display:dp1|tt[1]
+Warning: Latch display:dp1|temp[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal display:dp1|tt[2]
+Warning: Latch display:dp1|temp[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal display:dp1|tt[0]
 Info: Registers with preset signals will power-up high
-Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
-    Info: Register "display:dp1|LFSR:LFSR1|state~5" lost all its fanouts during netlist optimizations.
-    Info: Register "display:dp1|LFSR:LFSR1|state~6" lost all its fanouts during netlist optimizations.
-    Info: Register "display:dp1|LFSR:LFSR1|state~7" lost all its fanouts during netlist optimizations.
-Warning: Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "start"
-    Warning (15610): No output dependent on input pin "down"
-Info: Implemented 202 device resources after synthesis - the final resource count might be different
-    Info: Implemented 5 input pins
+Info: Implemented 273 device resources after synthesis - the final resource count might be different
+    Info: Implemented 3 input pins
     Info: Implemented 49 output pins
-    Info: Implemented 148 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Implemented 221 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 21 warnings
     Info: Peak virtual memory: 235 megabytes
-    Info: Processing ended: Fri Dec 11 12:05:42 2020
+    Info: Processing ended: Fri Dec 18 11:54:34 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
